@@ -17,6 +17,10 @@ body {
   justify-content: center;
 }
 
+div a:hover, span:hover {
+  font-weight: 700;
+}
+
 .instagram-wrapper {
   display: flex;
   align-items: center;
@@ -33,5 +37,126 @@ body {
 }
 
 .instagram-phone img {
-  height: 100rem;
+  height: 50rem;
+}
+
+.instagram-continue {
+  display: flex;
+  align-items: center; /* horizontal */
+  flex-direction: column;
+  width: 50%;
+  min-height: 34rem;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #FFF;
+  width: 100%;
+  padding: 1.3rem 0;
+  border: 1px solid lightgray;
+}
+
+.group:nth-child(1) {
+  margin-bottom: 1rem;
+}
+
+.group .logo-img {
+  width: 200px;
+  height: 70px;
+}
+
+.profile-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 1rem 0 1rem 0;
+}
+
+.profile-photo img {
+  height: 6rem;
+}
+
+.instagram-login {
+  background-color: #0095F6;
+  color: #FFF;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.instagram-logout {
+  color: #0095F6;
+  margin-top: 1rem;
+}
+
+.not-account {
+  color: rgb(160, 160, 160);
+}
+
+.link-blue {
+  color: #0095F6;
+}
+
+.get-the-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1.3rem 0;
+}
+
+.download {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+.app-download {
+  height: 3rem;
+  width: 10rem;
+  background-size: cover;
+}
+
+.app-download:nth-child(1) {
+  background-image: url('./images/button-apple-store.png');
+}
+
+.app-download:nth-child(2) {
+  background-image: url('./images/button-google-play.png');
+}
+
+/* media queries */
+
+@media (max-width: 1024px) {
+  .instagram-wrapper {
+    width: 90%;
+  }
+}
+
+@media (max-width: 650px) {
+  body {
+    background-color: #FFF;
+  }
+
+  .instagram-wrapper {
+    width: 90%;
+  }
+
+  .instagram-phone {
+    display: none;
+  }
+
+  .instagram-continue {
+    width: 100%;
+  }
+
+  .group {
+    border: 1px solid transparent;
+  }
 }

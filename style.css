@@ -7,10 +7,20 @@
   font-size: 14px;
 }
 
+html {
+  --bg: rgb(243, 243, 243);
+  --bg-secundary: #FFF;
+  --bg-group: #FFF;
+  --border-color: lightgray;
+  --color-links: #0095F6;
+  --color-text-button: #FFF;
+  --color-texts: rgb(160, 160, 160);
+}
+
 body {
   width: 100%;
   min-height: 100vh;
-  background-color: rgb(243, 243, 243);
+  background-color: var(--bg);
   margin: 0;
   padding: 0;
   display: flex;
@@ -21,12 +31,66 @@ div a:hover, span:hover {
   font-weight: 700;
 }
 
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 100vh;
+}
+
+.toogle {
+  width: 100%;
+  margin-top: 5rem;
+  padding-right: 5rem;
+}
+
 .instagram-wrapper {
   display: flex;
   align-items: center;
   justify-content: start;
   width: 60%;
   height: 100vh;
+}
+
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 52px;
+  height: 27px;
+  background: gray;
+  float: right;
+  border-radius: 100px;
+  position: relative;
+}
+
+label::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 90px;
+  transition: .3s;
+}
+
+input:checked + label {
+  background-color: gray;
+}
+
+input:checked + label::after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
 }
 
 .instagram-phone {
@@ -52,10 +116,10 @@ div a:hover, span:hover {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #FFF;
+  background-color: var(--bg-group);
   width: 100%;
   padding: 1.3rem 0;
-  border: 1px solid lightgray;
+  border: 1px solid var(--border-color);
 }
 
 .group:nth-child(1) {
@@ -81,23 +145,23 @@ div a:hover, span:hover {
 }
 
 .instagram-login {
-  background-color: #0095F6;
-  color: #FFF;
+  background-color: var(--color-links);
+  color: var(--color-text-button);
   padding: 8px;
   border-radius: 4px;
 }
 
 .instagram-logout {
-  color: #0095F6;
+  color: var(--color-links);
   margin-top: 1rem;
 }
 
 .not-account {
-  color: rgb(160, 160, 160);
+  color: var(--color-texts);
 }
 
 .link-blue {
-  color: #0095F6;
+  color: var(--color-links);
 }
 
 .get-the-app {
@@ -141,7 +205,7 @@ div a:hover, span:hover {
 
 @media (max-width: 650px) {
   body {
-    background-color: #FFF;
+    background-color: var(--bg-secundary);
   }
 
   .instagram-wrapper {
